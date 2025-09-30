@@ -18,12 +18,15 @@ let signUpSchema = mongoose.Schema({
         max: 60
     },
     phoneNo: {
-        type: Number
+        type: Number,
+        unique: [true, "contact number is already exceted"]
     },
     email: {
         type: String,
         required: true,
         trim: true,
+        unique: [true, "this email have a account"]
+    
     },
     password: {
         type: String,
